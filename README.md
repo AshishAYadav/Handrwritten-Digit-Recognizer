@@ -14,7 +14,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 ```python
 mnist = input_data.read_data_sets("MNIST_data/",one_hot=True)
 ```
-
+out:
     Extracting MNIST_data/train-images-idx3-ubyte.gz
     Extracting MNIST_data/train-labels-idx1-ubyte.gz
     Extracting MNIST_data/t10k-images-idx3-ubyte.gz
@@ -26,12 +26,11 @@ mnist = input_data.read_data_sets("MNIST_data/",one_hot=True)
 
 ```python
 type(mnist)
-#tensorflow.contrib.learn.python.learn.datasets.base.Datasets
 ```
 
 
 
-
+out:
     tensorflow.contrib.learn.python.learn.datasets.base.Datasets
 
 
@@ -46,7 +45,7 @@ mnist.train.num_examples
 ```
 
 
-
+out:
 
     55000
 
@@ -63,7 +62,7 @@ mnist.train.images[1].shape
 
 
 
-
+out:
     (784,)
 
 
@@ -75,7 +74,7 @@ plt.imshow(mnist.train.images[15].reshape(28,28))
 
 
 
-
+out:
     <matplotlib.image.AxesImage at 0x1a547431128>
 
 
@@ -92,7 +91,7 @@ mnist.train.images[1].max()
 ```
 
 
-
+out:
 
     1.0
 
@@ -154,6 +153,6 @@ with tf.Session() as sess:
     acc = tf.reduce_mean(tf.cast(matches,tf.float32))
     print(sess.run(acc,feed_dict={x:mnist.test.images,y_true:mnist.test.labels}))
 ```
-
+out:
     0.9212
     The model can recognize handwritten digits of images (28*28=784 pixels)  with accuracy 0.9212 this accuracy can be improved further by training the model. 
